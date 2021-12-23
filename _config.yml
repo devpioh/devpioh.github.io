@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-kr"
+locale                   : "ko-KR"
 title                    : "Pioh Archieve"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
@@ -106,11 +106,11 @@ author:
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Hello"
   location         : "South Korea"
-  email            : "piohdev@gmail.com"
+  email            : 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "piohdev@gmail.com"
+      url: "piohdev@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
