@@ -254,6 +254,9 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+devlog_archive:
+  type: liquid
+  path: /devlogs/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
