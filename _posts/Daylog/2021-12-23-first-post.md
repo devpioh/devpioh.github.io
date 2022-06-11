@@ -3,9 +3,9 @@ title: "블로그 포스트 테스트"
 excerpt: "남들 다하는 github pages 나도 시작"
 
 categories: 
-    - life
+    - daylog
 tags:
-    - life
+    - daylog
 ---
 
 개발자들이라면 다 한다는 github pages를 이용해서 나도 블로그랑 개발문서 정리를 하려고 한다.  

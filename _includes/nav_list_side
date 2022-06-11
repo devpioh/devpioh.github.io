@@ -1,0 +1,18 @@
+
+<nav class="nav__list">
+    <ul calss="nav__items" id="category_tag_menu">
+        <li>
+            <span class="nav__sub-title">Dev Log</span>
+            {% for category in site.categories %}
+                {% case category[0] %}
+                    {% when "unity" %}
+                        <ul><li><a href="/devlog/unity" class="">Unity ({{category[1].size}})</a></li></ul>
+                    {% when "csharp" %}
+                        <ul><li><a href="/devlog/csharp" class="">C# ({{category[1].size}})</a></li></ul>
+                {% endcase %}
+            {% endfor %}
+            <!-- <span class="nav__sub-title">Day Log</span> -->
+            <!-- <span class="nav__sub-title">Dive Log</span> -->
+        </li>
+    </ul>
+</nav>

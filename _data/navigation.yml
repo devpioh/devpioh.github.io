@@ -1,6 +1,6 @@
 # main links
 main:
- - title: "Dev logs"
-   url: /devlogs/
- - title: "Dive logs"
-   url: /divelogs/
+#  - title: "Category"
+#    url: /categories/
+#  - title: "Dive logs"
+#    url: /divelogs/
