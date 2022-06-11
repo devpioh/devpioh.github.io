@@ -1,0 +1,25 @@
+{% if post.header.teaser %}
+    {% capture teaser %} {{ post.header.teaser }} {% endcapture %}
+{% else %}
+    {% assign teaser = site.teaser %}
+{% endif %}
+
+{% if post.id %}
+    {% assign title = post.tile | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+    {% assign title = post.title %}
+{% endif %}
+
+
+<div class="{{ include.type | defualt: "list" }}__item">
+    <article class="archive-item">
+        <div>
+            <span>
+                <a href="{{ post.url }}"> [ {{ post.date | date: " %Y.%m.%d" }} ]   {{ post.title }}</a>
+            </span>            
+            <!-- <small>
+                {{ post.date | date: " %Y.%m.%d" }}
+            </small>> -->
+        </div>
+    </article>
+</div>
