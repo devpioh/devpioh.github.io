@@ -6,11 +6,13 @@
             {% for category in site.categories %}
                 {% case category[0] %}
                     {% when "unity" %}
-                        <ul><li><a href="/devlog/unity" class="">Unity ({{category[1].size}})</a></li></ul>
+                        <ul><li><a href="/devlog/unity">Unity ({{category[1].size}})</a></li></ul>
                     {% when "csharp" %}
-                        <ul><li><a href="/devlog/csharp" class="">C# ({{category[1].size}})</a></li></ul>
+                        <ul><li><a href="/devlog/csharp">C# ({{category[1].size}})</a></li></ul>
+                    {% when "version control" %}
+                        <ul><li><a href="/devlog/version-control">Version Control ({{category[1].size}})</a></li></ul>
                     {% when "blog" %}
-                        <ul><li><a href="/devlog/blog" class="">Blog ({{category[1].size}})</a></li></ul>
+                        <ul><li><a href="/devlog/blog">Blog ({{category[1].size}})</a></li></ul>
                 {% endcase %}
             {% endfor %}
             <!-- <span class="nav__sub-title">Day Log</span> -->

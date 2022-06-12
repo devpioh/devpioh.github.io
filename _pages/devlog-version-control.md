@@ -7,7 +7,7 @@ sidebar_nav: true
 ---
 
 ***
-{% assign posts = site.categories['Version Control'] %}
+{% assign posts = site.categories['version control'] %}
 
 {% for post in posts %}
     {% include archive-single2.html type=page.entries_layout %}

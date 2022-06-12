@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+sitemap: https://devpioh.github.io/sitemap.xml
