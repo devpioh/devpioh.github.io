@@ -13,6 +13,8 @@
                         <ul><li><a href="/devlog/version-control">Version Control ({{category[1].size}})</a></li></ul>
                     {% when "blog" %}
                         <ul><li><a href="/devlog/blog">Blog ({{category[1].size}})</a></li></ul>
+                    {% when "etc" %}
+                        <ul><li><a href="/devlog/etc">Etc ({{category[1].size}})</a></li></ul>
                 {% endcase %}
             {% endfor %}
             <!-- <span class="nav__sub-title">Day Log</span> -->
