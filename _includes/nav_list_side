@@ -3,7 +3,7 @@
     <ul calss="nav__items" id="category_tag_menu">
         <li>
             <span class="nav__sub-title">Dev Log</span>
-            {% for category in site.categories %}
+            <!-- {% for category in site.categories %}
                 {% case category[0] %}
                     {% when "unity" %}
                         <ul><li><a href="/devlog/unity">Unity ({{category[1].size}})</a></li></ul>
@@ -16,7 +16,42 @@
                     {% when "etc" %}
                         <ul><li><a href="/devlog/etc">Etc ({{category[1].size}})</a></li></ul>
                 {% endcase %}
-            {% endfor %}
+            {% endfor %} -->
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "csharp" %}
+                        <li><a href="/devlog/csharp">C# ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "unity" %}
+                        <li><a href="/devlog/unity">Unity ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "version control" %}
+                        <li><a href="/devlog/version-control">Version Control ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "blog" %}
+                        <li><a href="/devlog/blog">Blog ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "etc" %}
+                        <li><a href="/devlog/etc">ETC ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
             <!-- <span class="nav__sub-title">Day Log</span> -->
             <!-- <span class="nav__sub-title">Dive Log</span> -->
         </li>

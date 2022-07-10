@@ -293,3 +293,11 @@ defaults:
       share: true
       related: true
       sidebar_nav: true
+
+
+markdown: kramdown
+kramdown:
+    highlighter: rouge
+    syntax_highlighter_opts:
+        block:
+            line_numbers: true
