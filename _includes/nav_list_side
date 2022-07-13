@@ -33,6 +33,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "algorithm" %}
+                        <li><a href="/devlog/algorithm">Algorithms ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "version control" %}
                         <li><a href="/devlog/version-control">Version Control ({{category[1].size}})</a></li>
                     {% endif %}
