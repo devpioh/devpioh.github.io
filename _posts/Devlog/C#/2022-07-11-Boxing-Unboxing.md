@@ -59,7 +59,7 @@ private void DoSomething()
 
 이는 추후 GC가 해당 데이터의 ~~참조 카운터~~ 참조 그래프를 보고 더이상 사용이 되지 않는다라고 판단되면 메모리에서 해제 한다.
 
-이 부분은 다음 포스팅인 **[Garbage Collection]({% post_url /Devlog/c#../../2022-07-11-Garbage-Collection %})**에서 더 알아보기로 한다.
+이 부분은 다음 포스팅인 **[Garbage Collection]({% post_url /Devlog/C#/2022-07-11-Garbage-Collection %})**에서 더 알아보기로 한다.
 
 
 ### Unboxing
