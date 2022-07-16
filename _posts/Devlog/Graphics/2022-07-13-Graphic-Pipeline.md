@@ -138,4 +138,4 @@ M, V, P 는 각 변환에 사용되는 변환 행렬의 이름이기도 한다.
 
 ## 출처 및 같이 보기
 - <a href="https://learnopengl.com/Getting-started/Coordinate-Systems">OpenGL Coordinate system</a>
-- <a href="hhttps://rito15.github.io/posts/rendering-pipeline/">rito15 님의 파이프라인 간단 정리</a>
+- <a href="https://rito15.github.io/posts/rendering-pipeline/">rito15 님의 파이프라인 간단 정리</a>
