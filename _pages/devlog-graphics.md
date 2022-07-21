@@ -1,5 +1,5 @@
 ---
-title: "Algorithm"
+title: "Graphics"
 layout: archive
 permalink: devlog/graphics
 author_profile: true
