@@ -21,9 +21,10 @@ tag:
 
 하지만 이미 공통된 동작에 대한 처리는 상속으로 구현하면 되는데 왜 인터페이스라는 기능으로 만든것일까?
 
-이미 다들 아시다 시피 c#은 하나의 클래스만을 상속하는것을 허용하고, 클래스의 다중상속은 언어 차원에서 허용하지 않는다.
-  
-다중상속에서 가장 큰 문제는 **"모호성"** 인데, 
+### 다중 상속의 문제
+c#은 하나의 클래스만을 상속하는것을 허용하고, 클래스의 다중 상속은 언어 차원에서 허용하지 않는다.
+   
+다중상속의 가장 대표적인 문제가 아래의 도식처럼 구조가 형성되는 다이아몬드 문제이다.
    
 ![diamond problem](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Diamond_inheritance.svg/440px-Diamond_inheritance.svg.png)
       
@@ -62,29 +63,99 @@ tag:
         int GetData()       { return m_data; }
         void CallMethod()   { MethodA(); }
   }
- ```   
- 1. D 의 생성자는 어떻게 호출될까?
-  ``` 
-  A
-  B
-  A
-  C
-  D
-  ```
-  - D 는 A를 상속받은 B와 C를 상속받으므로 생성자 호출 시 각 B와 C의 부모클래스인 A를 호출해야된다.
- 2. D 의 GetData()를 호출하면 어떻게 될까?
-  - 컴파일러는 B 와 C 중 어느 쪽 m_data를 호출해야 되는지 알지 못해 불만을 터트리며 컴파일 에러를 뱉어 낼 것이다.
- 3. D 의 CallMethod()를 호출하면 어떻게 될까?
-  - 2번 상황과 마찬가지로 어느쪽 메서드를 호출해야된지 알지 못하므로 컴파일 에러가 발생된다.
+ ```
+        
+1. D 의 생성자는 어떻게 호출될까?
+``` 
+A
+B
+A
+C
+D
+```
+   - D 는 A를 상속받은 B와 C를 상속받으므로 생성자 호출 시 각 B와 C의 부모클래스인 A를 호출해야된다.
 
-사용자가 의도치 않게 혹은 
+2. D 의 GetData()를 호출하면 어떻게 될까?
+   - 컴파일러는 B 와 C 중 어느 쪽 m_data를 호출해야 되는지 알지 못해 불만을 터트리며 컴파일 에러를 뱉어 낼 것이다.
+       
+3. D 의 CallMethod()를 호출하면 어떻게 될까?
+   - 2번 상황과 마찬가지로 어느쪽 메서드를 호출해야된지 알지 못하므로 컴파일 에러가 발생된다.
+
+상속으로 인해 코드의 재사용성과 확장이 늘어났지만, 중복 코드의 문제와 구조의 복잡성이 늘어나게 된 것이다.
+
+그래서 c#은 상속은 단일 클래스로만 가능하게 했다. 하지만 단일 클래스의 상속만으로는 객체지향의 특징인 다형성을 구현하지 못한다.
+  
+여기서 인터페이스를 이용해 동작에 대한 확장을 적용하므로써 다형성을 구현한다.
+
+c#은 공통된 속성과 대한 처리는 기본 클래스의 상속, 기능의 확장으로는 인터페이스의 상속으로 다형성을 표현한것으로 생각한다.
+  
+하지만 클래스의 다중 상속을 허용하지 않아도 인터페이스의 메서드 이름의 중복은 남아있다.
+
+### 암묵적 / 명시적 구현
+c# 에서는 인터페이스의 구현을 2가지로 할 수 있다.
+ 1. public 접근지정자로 구현하는 **"암묵적 구현"**
+ 2. 접근지정자를 생략하고 *인터페이스명.메서드*로 구현하는 **"명시적 구현"**
+
+```cs
+public interface IAction
+{
+  void Action();
+  void Reaction();
+}
+
+public class Button : IAction
+{
+  public void Action()
+  {
+    // 암묵적 구현
+  }
+
+  void IAction.Reaction()
+  {
+    // 명시적 구현
+  }
+}
+
+public class App
+{
+  public static void Main()
+  {
+    var button = new Button();
+    button.Action();        // 객체로 호출 가능
+    //button.Reaction();    // 객체로 호출 불가!
+
+    IAction act = button;
+    act.Action();        // 인터페이스로 호출 가능
+    act.Reaction();      // 인터페이스로 호출 가능  
+
+    ((IAction)button).Reaction(); // IAction 으로 캐스팅 해야지만 호출 가능
+  }
+}
+```
+암묵적 구현은 일반적인 인터페이스의 구현 방법이다.
    
+public 접근 지정자로 인터페이스의 메서드를 구현하는 방법으로 인터페이스를 상속한 객체의 public 멤버로 접근이 가능하다.
+   
+명시적 구현은 인터페이스를 상속한 객체의 멤버로는 접근을 할 수 없지만 해당 상속한 인터페이스로 캐스팅으로 접근이 가능한 형태이다.
+   
+이 명시적 구현이 인터페이스의 메소드 명칭 중복을 해결한다.
+
+혹시 IEnumerable<T>를 상속해 본적이 있다면, GetEnumerator()의 구현을 묵시적과 명시적으로 2번 구현을 했을 것이다.
+  
+c#에 아직 제네릭이 도입되기전에는 IEnumerable의 GetEnumerator()이 있었고 이는 상당한 Boxing이 발생된다.
+
+추후 제네릭을 도입하여 Boxing 문제를 해결한게 IEnumerable<T>의 GetEnumerator()지만 문제는 여기서 생긴다.
+
+c#은 하위 버전의 호환성을 위해 IEnumerable<T>는 IEnumerable을 상속하는 형태로 구현이 됬는데 GetEnumerable()의 모호성이 생긴다.
+
+*명시적으로 어떤 인터페이스의 메서드인지를 CLR에게 알리고 접근지정자를 숨기면서 외부에서의 접근은 불가능하게 했다.*
+
+## 그래서 interface는 왜 사용하나요?
 
 
-## 암묵적 구현
-## 명시적 구현
 ## 출처 및 같이 보기
 - <a href="https://docs.microsoft.com/ko-kr/dotnet/csharp/fundamentals/types/interfaces">c# 인터페이스</a>
 - <a herf="https://ko.wikipedia.org/wiki/%EB%8B%A4%EC%A4%91_%EC%83%81%EC%86%8D">위키 다중상속</a>
-- <a href="https://www.csharpstudy.com/DevNote/Article/4">인터페이스의 암묵적/명시적 정의</a>
+- <a href="https://www.csharpstudy.com/DevNote/Article/4">인터페이스의 암묵적/명시적 구현</a>
+- <a href="https://youtu.be/tL3sB6qaIoM">쓸데없는 인터페이스</a>
 
