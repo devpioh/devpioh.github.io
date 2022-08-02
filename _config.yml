@@ -289,7 +289,7 @@ defaults:
       classes: wide
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
       sidebar_nav: true
