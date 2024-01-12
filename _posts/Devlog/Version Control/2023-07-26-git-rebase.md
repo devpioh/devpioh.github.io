@@ -1,7 +1,7 @@
 ---
-title: "git merge"
+title: "git rebase"
 date: 2023-07-26
-last_modified_at: 2023-07-26
+last_modified_at: 2024-01-12
 
 toc: true
 toc_sticky: true
