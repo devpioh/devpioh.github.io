@@ -31,3 +31,6 @@ tag:
 #### 전환
 - Fn + c (우측 하얀 LED 점등) -> 등록한 프로필 번호(숫자키 1 ~ 4)
 
+
+## 출처 같이 보기
+- <a href="https://happyhackingkb.com/manual/studio/ug-us/en/ug/topic/index.html">해피해킹 매뉴얼</a>
