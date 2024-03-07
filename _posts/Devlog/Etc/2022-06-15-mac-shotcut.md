@@ -19,3 +19,8 @@ tag:
  해당 디렉토리에서 
  command + . + shift
 ```
+
+### 강제종료
+```
+command + option + esc
+```
