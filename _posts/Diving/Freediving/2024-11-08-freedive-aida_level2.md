@@ -7,7 +7,7 @@ toc: true
 toc_sticky: true
 
 categories:
-    - FreeDiving
+    - Diving
 tag:
     - [FreeDiving, AIDA, LEVEL2]
 ---
