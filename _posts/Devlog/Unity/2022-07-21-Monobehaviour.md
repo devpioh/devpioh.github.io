@@ -41,5 +41,5 @@ Monobehaviour는 유니티 엔진에서 정의된 메세지 함수가 호출하�
 | OnDestory() | 오브젝트 파괴 시점 | 컴포넌트가 참조하던 리소스 해제 및 정리 작업 |
 
 ## 출처 및 같이 보기
-[Monobehabiour](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/MonoBehaviour.html)
+[Monobehaviour](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/MonoBehaviour.html)     
 [Unity Order of execution for event functions](https://docs.unity3d.com/6000.1/Documentation/Manual/execution-order.html)
