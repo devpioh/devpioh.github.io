@@ -63,7 +63,7 @@ var stop =  StartCoroutine(WaitJob());
 StopCoroutine(stop);
 ```
 
-## yield return 
+## "yield return"
 yield return 의 대기 반환은 여러 종류가 있지만 자주 사용되는 몇가지를 정리해 본다.
 
 | 표현식 | 설명 |
