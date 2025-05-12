@@ -1,7 +1,7 @@
 ---
-title: "interface의 묵시적 / 명시적 구현"
+title: "interface의 암묵적 / 명시적 구현"
 date: 2022-07-25
-last_modified_at: 2022-07-25
+last_modified_at: 2025-05-12
 
 toc: true
 toc_sticky: true
@@ -138,7 +138,7 @@ public 접근 지정자로 인터페이스의 메서드를 구현하는 방법�
 
 바로 이 명시적 구현이 c#에서 메서드 명 중복을 해결한다.
    
-혹시 IEnumerable<T>를 상속해 본적이 있다면, GetEnumerator()의 구현을 묵시적과 명시적으로 2번 구현을 했을 것이다.
+혹시 IEnumerable<T>를 상속해 본적이 있다면, GetEnumerator()의 구현을 암묵적과 명시적으로 2번 구현을 했을 것이다.
   
 c#에 아직 제네릭이 도입되기전에는 IEnumerable의 GetEnumerator()이 있었고 이는 상당한 Boxing이 발생된다.
 
@@ -148,13 +148,13 @@ c#은 하위 버전의 호환성을 위해 IEnumerable<T>는 IEnumerable을 상�
 
 클래스에서 IEnumerable<T>를 상속하는경우 어느 쪽의 GetEnumerable()을 쓸 것 인지를 CLR이 알지 못하게 되어 버린것이다.
 
-c#은 이 메서드 중복의 문제를 상속 받는 클래스에서 *외부에 노출하고 싶은 인터페이스의 메서드*는 **묵시적 구현**으로 구현하고,
+c#은 이 메서드 중복의 문제를 상속 받는 클래스에서 *외부에 노출하고 싶은 인터페이스의 메서드*는 **암묵적 구현**으로 구현하고,
    
 *외부에 노출시키면 위험하거나 혹은 숨기고 싶은 인터페이스의 메서드*는 **명시적 구현** 으로 해결했다.
 
 IEnumerable<T>의 경우로 보자면 IEnumerable의 GetEnumerable()는 박싱의 위험이 있으니 외부의 노출을 막는것과 낮은 버전의 .Net에서도 동작이 가능해야되므로
 
-IEnumerable의 GetEnumerable()는 명시적 구현을 통해 처리하고, 제네릭 버전의 IEnumerable<T>의 GetEnumerable()을 묵시적 구현으로 처리했다.
+IEnumerable의 GetEnumerable()는 명시적 구현을 통해 처리하고, 제네릭 버전의 IEnumerable<T>의 GetEnumerable()을 암묵적 구현으로 처리했다.
 
 즉, 인터페이스의 명시적 구현을 통해서 다중상속의 메서드 중복문제와 하위 버전의 호환성 문제를 동시에 해결한 것이다.
 
