@@ -1,5 +1,5 @@
 ---
-title: "Coroutine"
+title: "coroutine"
 date: 2022-07-21
 last_modified_at: 2025-05-08
 
@@ -9,7 +9,7 @@ toc_sticky: true
 categories:
     - unity
 tag:
-    - [unity, Coroutine]
+    - [unity, coroutine]
 ---
 
 ## 개요
@@ -77,5 +77,5 @@ yield return 의 대기 반환은 여러 종류가 있지만 자주 사용되는
 
 
 ## 출처 및 같이 보기
-[StartCoroutine](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StartCoroutine.html)      
-[StopCoroutine](hhttps://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StopCoroutine.html)
+- [StartCoroutine](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StartCoroutine.html)      
+- [StopCoroutine](hhttps://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StopCoroutine.html)
