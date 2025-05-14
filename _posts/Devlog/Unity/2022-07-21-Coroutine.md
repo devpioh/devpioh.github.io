@@ -13,6 +13,7 @@ tag:
 ---
 
 ## 개요
+
 유니티에서 비동기 처리 작업 처리를 위한 함수.
 
 프레임단위의 조작이나 일정 시간의 동작을 분산시키거나, 비동기적 흐름 제어에 유용하다.
@@ -24,7 +25,9 @@ tag:
 메인스레드에서 동작되므로 유니티 API에 안전하다.
 
 ## 기본적인 사용
-#### 1. 메서드 시그니처
+
+### 1. 메서드 시그니처
+
 반환형은 반드시 IEnermerator 이어야 된다.
 
 ```cs
@@ -39,14 +42,16 @@ private IEnumerator WaitJob()
 
 ```
 
-#### 2. 실행
+### 2. 실행
+
 StartCoroutine() 메서드로 실행.
 
 ```cs
 StartCoroutine(WaitJob());
 ```
 
-#### 3. 중지
+### 3. 중지
+
 * StopCoroutine("WaitJob");
 * StopAllCoroutine();
 
@@ -63,7 +68,8 @@ var stop =  StartCoroutine(WaitJob());
 StopCoroutine(stop);
 ```
 
-## "yield return"
+## yield return
+
 yield return 의 대기 반환은 여러 종류가 있지만 자주 사용되는 몇가지를 정리해 본다.
 
 | 표현식 | 설명 |
@@ -74,8 +80,7 @@ yield return 의 대기 반환은 여러 종류가 있지만 자주 사용되는
 | yield return new WaitUntil(() => isTrue); | 함수 또는 람다식의 return 값이 true로 평가 될 때까지 대기 |
 | yield return StartCoroutine(OtherCoroutine()); | OtherCoroutine() 이 끝날 때 까지 대기 |
 
-
-
 ## 출처 및 같이 보기
-- [StartCoroutine](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StartCoroutine.html)      
-- [StopCoroutine](hhttps://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StopCoroutine.html)
+
+* [StartCoroutine](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StartCoroutine.html)
+* [StopCoroutine](hhttps://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StopCoroutine.html)
