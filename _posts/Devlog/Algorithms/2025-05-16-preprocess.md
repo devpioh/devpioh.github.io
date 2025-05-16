@@ -1,0 +1,13 @@
+---
+title: "preprocesss(전처리)"
+date: 2025-05-16
+last_modified_at: 2025-05-16
+s
+toc: true
+toc_sticky: true
+
+categories:
+    - algorithm
+tag:
+    - [algorithm, preprocess]
+---
