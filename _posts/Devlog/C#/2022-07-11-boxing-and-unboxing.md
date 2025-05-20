@@ -1,7 +1,7 @@
 ---
 title: "Boxing 과 Unboxing"
 date: 2022-07-11
-last_modified_at: 2022-07-11
+last_modified_at: 2025-05-20
 
 toc: true
 toc_sticky: true
@@ -14,9 +14,16 @@ tag:
 
 ## 개요
 
+>25-05-20 포스팅한 글에 잘못된 정보가 많아 해당 부분을 수정.
+
 CTS(공통 형식 시스템)에서는 값 타입과 참조 타입 2가지의 타입이 있다.
   
 두 타입은 메모리에 할당 되는 방식에 차이가 있는데, 값 타입의 경우 스택에 할당되는 반면 참조 타입의 경우 힙 메모리에 할당된다.
+
+    > 값 타입도 다음과 같은 경우 힙 메모리에 할당된다.
+        1. 참조 타입의 객체 필드로 포함되는 경우.
+        2. 배열과 같은 컬렉션의 요소로 저장.
+        3. Jit 최적화나 레지스터 할당으로 인해 스택 되신에 cpu 레지스터에 보관되는 경우.
   
 즉 값 타입의 경우 함수가 끝나는 동시에 스택 메모리에서 해제되지만, 참조 타입의 경우는 GC(가비지 컬렉터)에 의해 해제된다.
   
@@ -26,15 +33,15 @@ CTS(공통 형식 시스템)에서는 값 타입과 참조 타입 2가지의 타
 
 아래의 코드를 보자
 
-```cs
-private void DoSomething()
-{
-    int a = 123;
-    
-    int b = a;          // a의 값은 복사되어 b에 저장
-    object o = a;       // Boxing 변환 발생
-}
-```
+    ```cs
+    private void DoSomething()
+    {
+        int a = 123;
+        
+        int b = a;          // a의 값은 복사되어 b에 저장
+        object o = a;       // Boxing 변환 발생
+    }
+    ```
 
 변수 a에 데이터 123이 저장되고, 다시 변수 b에 a를 대입 시킨다.
 
@@ -44,8 +51,8 @@ private void DoSomething()
 
 이때, 박싱 변환이 일어나는데 아래와 같은 과정을 거치게 된다.
 
- 1. 힙 메모리에 변수 a의 타입의 크기만큼 메모리가 할당.
- 2. 변수 a의 값을 복사해 힙 메모리에 저장.
+ 1. 힙 메모리에 변수 a의 타입의 객체 인스턴스가 생성.
+ 2. 변수 a의 값을 생성된 객체 인스턴스에 복사.
  3. 스택에 변수 o가 할당.
  4. 힙에 할당된 a복사 데이터 주소를 변수 o에 저장.
 
@@ -55,28 +62,24 @@ private void DoSomething()
 
 메모리에서 해제도 DoSomething() 함수가 종료 될때 내부의 지역 변수들은 스택에서 해제 되지만,
 
-변수 o가 참조되는 데이터는 힙영역에 있으므로 단순히 해당 ~~데이터의 참조 카운터가 하나 내려가는 것 밖에 되지 않는다.~~
-
-(이 부분은 잘못 되었다. c#은 참조 타입에 대한 메모리를 레퍼런스 카운터 방식이 아닌 참조 그래프를 만들어서 해당 객체가 참조되는지 아닌지를 파악한다.)
-
-이는 추후 GC가 해당 데이터의 ~~참조 카운터~~ 참조 그래프를 보고 더이상 사용이 되지 않는다라고 판단되면 메모리에서 해제 한다.
+변수 o가 참조되는 데이터는 힙영역에 있으므로 가비지 컬렉션 시점에 참조 그래프를 순회하여 더 이상 도달 할 수 없는 경우 객체를 해제 하게 된다.
 
 이 부분은 다음 포스팅인 **[Garbage Collection]({% post_url /Devlog/C#/2022-07-11-Garbage-Collection %})**에서 더 알아보기로 한다.
 
-### Unboxin
+### Unboxing
 
 아래의 코드를 보자
 
-```cs
-private void DoSomthing()
-{
-    int a = 123;
-    object o = a;       // Boxing 변환 발생
+    ```cs
+    private void DoSomthing()
+    {
+        int a = 123;
+        object o = a;        // Boxing 변환 발생
 
-    var o2 = o;         // o가 참조하는 a의 데이터 123의 주소가 복사되어 o2에 저장
-    int b = (int)o      // Unboxing 변환 발생
-}
-```
+        var o2 = o;          // o가 참조하는 a의 데이터 123의 주소가 복사되어 o2에 저장
+        int b = (int)o;      // Unboxing 변환 발생
+    }
+    ```
 
 동일하게 변수 a에 데이터 123을 저장하고, 변수 o에 a를 대입 시키면서 박싱 변환이 일어 났다.
 
@@ -106,4 +109,4 @@ Boxing과 Unboxing는 공통적으로 많은 비용을 소모하는 작업이다
 
 ## 출처 및 같이 보기
 
-- [Boxsing Unboxing](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/boxing-and-unboxing)
+- [Boxing Unboxing](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/boxing-and-unboxing)
