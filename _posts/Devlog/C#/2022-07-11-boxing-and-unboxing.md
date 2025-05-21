@@ -1,5 +1,5 @@
 ---
-title: "Boxing 과 Unboxing"
+title: "Boxing과 Unboxing"
 date: 2022-07-11
 last_modified_at: 2025-05-20
 
@@ -14,7 +14,7 @@ tag:
 
 ## 개요
 
->25-05-20 포스팅한 글에 잘못된 정보가 많아 해당 부분을 수정.
+>2025-05-20 포스팅한 글에 잘못된 정보가 많아 해당 부분을 수정.
 
 CTS(공통 형식 시스템)에서는 값 타입과 참조 타입 2가지의 타입이 있다.
   
@@ -51,10 +51,9 @@ CTS(공통 형식 시스템)에서는 값 타입과 참조 타입 2가지의 타
 
 이때, 박싱 변환이 일어나는데 아래와 같은 과정을 거치게 된다.
 
- 1. 힙 메모리에 변수 a의 타입의 객체 인스턴스가 생성.
- 2. 변수 a의 값을 생성된 객체 인스턴스에 복사.
- 3. 스택에 변수 o가 할당.
- 4. 힙에 할당된 a복사 데이터 주소를 변수 o에 저장.
+1. 힙 메모리에 객체 인스턴스 생성.
+2. 값 타입 데이터 복사.
+3. 로컬 변수 o에 해당 인스턴스의 참조(주소) 저장.
 
 ![Boxing](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/media/boxing-and-unboxing/boxing-operation-i-o-variables.gif)
 
@@ -62,16 +61,16 @@ CTS(공통 형식 시스템)에서는 값 타입과 참조 타입 2가지의 타
 
 메모리에서 해제도 DoSomething() 함수가 종료 될때 내부의 지역 변수들은 스택에서 해제 되지만,
 
-변수 o가 참조되는 데이터는 힙영역에 있으므로 가비지 컬렉션 시점에 참조 그래프를 순회하여 더 이상 도달 할 수 없는 경우 객체를 해제 하게 된다.
+변수 o가 참조되는 데이터는 힙영역에 있으므로 가비지 컬렉션 시점에 참조 그래프를 순회하여 더 이상 도달 할 수 없는 경우 객체를 해제한다.
 
-이 부분은 다음 포스팅인 **[Garbage Collection]({% post_url /Devlog/C#/2022-07-11-Garbage-Collection %})**에서 더 알아보기로 한다.
+>[.Net GC는 세대별(Gen0/1/2) tarcing 방식으로 Root에서 도달 불가 객체를 수집해 해제한다.]({% post_url /Devlog/C#/2022-07-11-garbage-collection %})
 
 ### Unboxing
 
 아래의 코드를 보자
 
     ```cs
-    private void DoSomthing()
+    private void DoSomething()
     {
         int a = 123;
         object o = a;        // Boxing 변환 발생
@@ -91,21 +90,14 @@ o, o2 둘다 참조 타입이므로 o가 참조하는 힙역역의 주소가 복
 
 이제 다시 변수 o를 변수 b에 대입시키는데 이때 언박싱 변환이 일어나고, 박싱 변환과 마찬가지로 아래와 같은 과정을 거친다.
 
- 1. 변수 o가 참조하는 힙 영역의 데이터의 크기만큼 스택에 메모리가 할당
- 2. 힙 영역에 있는 데이터를 복사.
- 3. 변수 b에 복사된 데이터를 저장.
+ 1. 변수 o가 참조하는 힙 영역의 데이터를 복사.
+ 2. 변수 b에 복사된 데이터를 저장.
 
 ![Unboxing](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/media/boxing-and-unboxing/unboxing-conversion-operation.gif)
 
-Boxing과 Unboxing는 공통적으로 많은 비용을 소모하는 작업이다.
+### 자주 발생되는 상황
 
-반복문 / 업데이트 함수에서 박싱과 언박싱이 많이 일어나게 될 경우 많은 양의 가비지를 발생시키고, 이는 성능저하로 이어진다.
-
-보통은 타입을 잘 맞춰서 코딩을 하지만 사용자가 모르게 발생되는 경우가 많다.
-
-특히 string.Format()의 경우 문자열에 데이터값을 표기 할때 많이 사용되는데 파라미터 값을 보면 object[] 로 데이터 값을 받는데,
-
-이 때 그냥 그대로 데이터를 집어 넣게 되는 경우 박싱 변환이 일어나게 되므로 주의해야된다.
+1
 
 ## 출처 및 같이 보기
 

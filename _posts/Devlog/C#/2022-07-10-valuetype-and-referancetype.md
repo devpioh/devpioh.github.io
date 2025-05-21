@@ -1,5 +1,5 @@
 ---
-title: "Value Type 과 Referance Type"
+title: "Value Type과 Referance Type"
 date: 2022-07-10
 last_modified_at: 2022-07-10
 
