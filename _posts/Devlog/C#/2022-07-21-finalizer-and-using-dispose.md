@@ -8,7 +8,7 @@ toc_sticky: true
 
 categories:
     - csharp
-tag:
+tags:
     - [csharp, c#, interface]
 ---
 

@@ -8,13 +8,13 @@ toc_sticky: true
 
 categories:
     - csharp
-tag:
+tags:
     - [csharp, c#, Garbage Collection, GC]
 ---
 
 ## 개요
 
-이전 포스트 [Boxing-Unboxing]({% post_url /Devlog/C#/2022-07-11-Boxing-Unboxing %})에서 박싱과 언박싱 시 가비지가 발생되는 이유를 이야기 했다.
+이전 포스트 [Boxing-Unboxing]({% post_url /Devlog/C#/2022-07-11-boxing-and-unboxing %})에서 박싱과 언박싱 시 가비지가 발생되는 이유를 이야기 했다.
 
 이번 포스트에서는 CLR의 가비지 컬렉션의 동작 원리를 간단하게 알아보고 GC로 인해 생기는 성능저하의 이유를 정리해 본다.
 

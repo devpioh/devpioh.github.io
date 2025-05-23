@@ -8,7 +8,7 @@ toc_sticky: true
 
 categories:
     - csharp
-tag:
+tags:
     - [csharp, c#]
 ---
 
@@ -96,8 +96,6 @@ o, o2 둘다 참조 타입이므로 o가 참조하는 힙역역의 주소가 복
 ![Unboxing](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/media/boxing-and-unboxing/unboxing-conversion-operation.gif)
 
 ### 자주 발생되는 상황
-
-1
 
 ## 출처 및 같이 보기
 

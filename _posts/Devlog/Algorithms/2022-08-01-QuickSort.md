@@ -8,7 +8,7 @@ toc_sticky: true
 
 categories:
     - algorithm
-tag:
+tags:
     - [algorithm, sort, quick]
 ---
 
