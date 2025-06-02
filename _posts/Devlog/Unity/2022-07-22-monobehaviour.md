@@ -22,11 +22,11 @@ Unity 엔진에서 스크립트 작성에 가장 기본이 되는 베이스 클�
 
 Monobehaviour는 GameObject에 컴포넌트로 붙여야지 동작하므로 부착된 GameObject에 대한 몇가지 편의 기능을 Property로 지원한다.
 
-* gameObject : 컴포넌트가 부착된 게임 오브젝트. var go = GetComponent<GameObject>(); 접근과 동일.
-* transform : 컴포넌트가 부착된 게임 오브젝트의 Transform 컴포넌트. var trans = GetComponent<Transform>(); 접근과 동일.
-* name : 컴포넌트가 부착된 게임 오브젝트의 이름.
-* tag : 컴포넌트가 부착된 게임 오브젝트의 Tag.
-* enabled : 컴포넌트를 활성화(OnEnable()) / 비활성화 (OnDisable()), 비활성화 되는 경우 해당 컴포넌트의 업데이트(Updaate()) 호출이 중지 된다.
+- gameObject : 컴포넌트가 부착된 게임 오브젝트. `var go = GetComponent<GameObject>();` 과 동일.
+- transform : 컴포넌트가 부착된 게임 오브젝트의 Transform 컴포넌트. `var trans = GetComponent<Transform>();` 과 동일.
+- name : 컴포넌트가 부착된 게임 오브젝트의 이름.
+- tag : 컴포넌트가 부착된 게임 오브젝트의 Tag.
+- enabled : 컴포넌트를 활성화(OnEnable()) / 비활성화 (OnDisable()), 비활성화 되는 경우 해당 컴포넌트의 업데이트(Updaate()) 호출이 중지 된다.
 
 ## Monobehaviour Lifecycle
 
@@ -45,5 +45,5 @@ Monobehaviour는 유니티 엔진에서 정의된 메세지 함수가 호출하�
 
 ## 출처 및 같이 보기
 
-[Monobehaviour](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/MonoBehaviour.html)
-[Unity Order of execution for event functions](https://docs.unity3d.com/6000.1/Documentation/Manual/execution-order.html)
+- [Monobehaviour](https://docs.unity3d.com/6000.1/Documentation/ScriptReference/MonoBehaviour.html)
+- [Unity Order of execution for event functions](https://docs.unity3d.com/6000.1/Documentation/Manual/execution-order.html)
