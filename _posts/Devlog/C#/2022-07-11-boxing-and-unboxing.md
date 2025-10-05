@@ -63,7 +63,7 @@ private void DoSomething()
 
 변수 o가 참조되는 데이터는 힙영역에 있으므로 가비지 컬렉션 시점에 참조 그래프를 순회하여 더 이상 도달 할 수 없는 경우 객체를 해제한다.
 
->[.Net GC는 세대별(Gen0/1/2) tarcing 방식으로 Root에서 도달 불가 객체를 수집해 해제한다.]({% post_url /Devlog/C#/2022-07-11-garbage-collection %})
+> [.Net GC는 세대별(Gen0/1/2) tarcing 방식으로 Root에서 도달 불가 객체를 수집해 해제한다.]({% post_url /Devlog/C#/2022-07-11-garbage-collection %})
 
 ### Unboxing
 
@@ -96,6 +96,18 @@ o, o2 둘다 참조 타입이므로 o가 참조하는 힙역역의 주소가 복
 ![Unboxing](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/types/media/boxing-and-unboxing/unboxing-conversion-operation.gif)
 
 ### 자주 발생되는 상황
+
+언듯 보면 위의 상황을 잘 피하기만 한다면, 박싱/언박싱으로 인한 오버헤드가 잘 일어나지 않아 보이지만 주의를 기울이지 않는다면 여러군데에서 박싱/언박싱이 발생된다.
+
+아래는 박싱/언박싱이 자주 일어나는 몇가지 예이다.
+
+1. 제네릭이 아닌 비제네릭 컬렉션을 사용하는 경우.
+2. 인터페이스 변수에 값타입(구조체 등)을 담아 사용하는 경우.
+3. 값타입을 object로 전달하는 경우(특히 가변인자(param object[] args)에 전달)
+
+위의 3가지의 경우가 대표적인 박싱/언박싱 캐스팅이 자주 발생되는 예이다.
+
+특히나 3번의 경우 디버깅으로 인해 값을 찍어 보기 위해 string.Format()을 사용하는 경우가 많은데 이 string.Format()은 가변인자로 구현되어 있으로 이로 인해 오버헤드가 발생된다.
 
 ## 출처 및 같이 보기
 
