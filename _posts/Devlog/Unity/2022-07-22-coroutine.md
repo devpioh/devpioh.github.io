@@ -1,6 +1,6 @@
 ---
 title: "coroutine"
-date: 2022-07-21
+date: 2022-07-22
 last_modified_at: 2025-05-08
 
 toc: true
@@ -18,9 +18,36 @@ tags:
 
 프레임단위의 조작이나 일정 시간의 동작을 분산시키거나, 비동기적 흐름 제어에 유용하다.
 
-"yield return" 키워드를 이용해 정지가 필요한 지점에서 대기 정보(null, WaitForSeconds, WaitForEndOfFrame등)을 리턴 시키고, 대기 처리가 끝나면 이어서 다음 구문을 실행한다.
+`yield return` 키워드를 사용하여, 정지가 필요한 시점에서 대기 객체(null, WaitForSeconds, WaitForEndOfFrame등)를 반환한다.
 
-코루틴은 비동기 흐름 제어로 인해 별도 스레드에서 실행되는 것 처럼 보이지만, 유니티 메인 스레드에서 동작되는 시분할(time-sharing) 시스템의 일종이다.
+이 후 대기 조건이 끝나면 이어서 다음 구문을 실행한다.
+
+코루틴은 마치 비동기적 병렬 실행되는 것처럼 보이지만, 실제로는 Unity 메인 스레드의 프레임 루프 내에서 순차적으로 실행된다.
+
+즉, *멀티 스레드가 아닌 단일 스레드 기반의 협력형(concurrent) 실행 모델* 이다.
+
+## 동작 구조
+
+```txt
+Unity 엔진에서 코루틴 동작 흐름
+
+1. StartCoroutine() -> 코루틴 등록
+
+2. IEnumerator.MoveNext() 호출
+
+3. yield return (대기 객체 반환)
+
+4. Unity가 반환된 객체 타입에 따라 대기 상태 결정
+
+5. 조건이 충족되면 다시 IEnumerator.MoveNext() 호출
+
+6. Coroutine 종료 시 코루틴 제거.
+
+```
+
+Unity의 코루틴은 C#의 `IEnumerator`를 기반으로 한 *상태 머신(State Machine) 형태의 객체*.
+
+`StartCoroutine()`을 호출하면 Unity dpswlsdl 이 `IEnumerator`를 내부 리스트(코루틴 매니저)에 등록하고, 매프레임 마다 `MoveNext()`를 호출하여 다음 `yield` 지점까지 실행한다.
 
 ## 기본적인 사용
 
@@ -51,7 +78,7 @@ StartCoroutine(WaitJob());
 ### 3. 중지
 
 * StopCoroutine("WaitJob");
-* StopAllCoroutine();
+* StopAllCoroutines();
 
 ```cs
 
@@ -81,4 +108,4 @@ yield return 의 대기 반환은 여러 종류가 있지만 자주 사용되는
 ## 출처 및 같이 보기
 
 * [StartCoroutine](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StartCoroutine.html)
-* [StopCoroutine](hhttps://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StopCoroutine.html)
+* [StopCoroutine](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MonoBehaviour.StopCoroutine.html)
