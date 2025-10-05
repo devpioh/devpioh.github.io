@@ -5,7 +5,7 @@ last_modified_at: 2023-05-31
 
 categories:
     - etc
-tag:
+tags:
     - [shell, 명령어]
 ---
 ## 개요

@@ -8,7 +8,7 @@ toc_sticky: true
 
 categories:
     - graphics
-tag:
+tags:
     - [graphics, graphic pipeline]
 ---
 

@@ -5,7 +5,7 @@ last_modified_at: 2022-06-15
 
 categories:
     - etc
-tag:
+tags:
     - [mac, 단축키]
 ---
 ## 개요

@@ -8,7 +8,7 @@ toc_sticky: true
 
 categories:
     - version control
-tag:
+tags:
     - [version control, git]
 ---
 

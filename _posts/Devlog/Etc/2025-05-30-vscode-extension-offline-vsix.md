@@ -8,7 +8,7 @@ toc_sticky: true
 
 categories:
     - etc
-tag:
+tags:
     - [visual studio, vs, extension]
 ---
 

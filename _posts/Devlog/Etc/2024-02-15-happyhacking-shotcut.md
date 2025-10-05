@@ -5,7 +5,7 @@ last_modified_at: 2024-02-15
 
 categories:
     - etc
-tag:
+tags:
     - [happyhacking, shotcut]
 ---
 ## 개요

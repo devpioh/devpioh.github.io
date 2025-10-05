@@ -8,7 +8,7 @@ toc_sticky: true
 
 categories:
     - unity
-tag:
+tags:
     - [unity, shader, shader variants]
 ---
 
