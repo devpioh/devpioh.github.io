@@ -16,7 +16,7 @@ tags:
 
 .Net 프레임워크에서 동작하는 언어(닷넷 호완 언어)는 한가지 지켜야 되는 규칙이 있다.
 
-**CTS(Common Type Systme) - 공통 형식 시스템**이라고 불리는 것으로 이는 언어가 지켜야되는 표준 타입 규격이다.
+**CTS(Common Type System) - 공통 형식 시스템**이라고 불리는 것으로 이는 언어가 지켜야되는 표준 타입 규격이다.
 
 CTS의 모든 타입들은 최상위 타입인 System.Object를 상속받아 구현되어져 있으며 다시 ValueType과 ReferanceType으로 나눠진다.
 
