@@ -28,26 +28,18 @@ tags:
 
 ## 동작 구조
 
-```txt
 Unity 엔진에서 코루틴 동작 흐름
 
 1. StartCoroutine() -> 코루틴 등록
-
 2. IEnumerator.MoveNext() 호출
-
 3. yield return (대기 객체 반환)
-
 4. Unity가 반환된 객체 타입에 따라 대기 상태 결정
-
 5. 조건이 충족되면 다시 IEnumerator.MoveNext() 호출
-
 6. Coroutine 종료 시 코루틴 제거.
-
-```
 
 Unity의 코루틴은 C#의 `IEnumerator`를 기반으로 한 *상태 머신(State Machine) 형태의 객체*.
 
-`StartCoroutine()`을 호출하면 Unity dpswlsdl 이 `IEnumerator`를 내부 리스트(코루틴 매니저)에 등록하고, 매프레임 마다 `MoveNext()`를 호출하여 다음 `yield` 지점까지 실행한다.
+`StartCoroutine()`을 호출하면 Unity 엔진이 `IEnumerator`를 내부 리스트(코루틴 매니저)에 등록하고, 매프레임 마다 `MoveNext()`를 호출하여 다음 `yield` 지점까지 실행한다.
 
 ## 기본적인 사용
 
