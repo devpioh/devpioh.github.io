@@ -17,7 +17,8 @@ tags:
 생각 날 때마다 업데이트  
 
 ## checkout
-```
+
+```bash
 // 특정 커밋으로 파일을 되돌리기
 git checkout <커밋 해시> -- <파일 경로>
 
@@ -31,4 +32,5 @@ git log -- <파일 경로>
 만약 최신 커밋으로 되돌리고 싶은 경우 **커밋 해시** 대신 **HEAD** 키워드 사용
 
 ## 출처 및 같이 보기
- - <a href="https://git-scm.com/book/ko/v2/">git document</a>
+
+- [git document]("https://git-scm.com/book/ko/v2/")

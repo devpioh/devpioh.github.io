@@ -19,4 +19,5 @@ tags:
 ## cherry-pick
 
 ## 출처 및 같이 보기
- - <a href="https://git-scm.com/book/ko/v2/">git document</a>
+
+- [git document](https://git-scm.com/book/ko/v2/)

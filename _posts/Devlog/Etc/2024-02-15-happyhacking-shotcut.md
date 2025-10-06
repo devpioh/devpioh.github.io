@@ -9,28 +9,44 @@ tags:
     - [happyhacking, shotcut]
 ---
 ## 개요
+
 키보드 프로필 및 블루투스 등록/전환/삭제 단축키 정리
 ***
 
 ### 블루투스
+
 #### 페어링 모드 취소
+
 - (우측 파란 LED 점등) Fn + x
-#### 등록 
-- Fn + q (우측 파란 LED 점등) -> Fn + Control + 등록하려는 블루투스 번호(숫자키 1 ~ 4) 
+
+#### 등록
+
+- Fn + q (우측 파란 LED 점등) -> Fn + Control + 등록하려는 블루투스 번호(숫자키 1 ~ 4)
+
 #### 등록된 기기 전환
+
 - Fn + Control + 등록된 블루투스 번호(숫자키 1 ~ 4)
+
 #### 등록된 기기 삭제
+
 - Fn + q (우측 파란 LED 점등) -> Fn + Control + Delete + 제거하려는 블루투스 번호(숫자키 1 ~ 4)
+
 #### 등록된 전체 기기 제거
+
 - Fn + q (우측 파란 LED 점등) -> Fn + z + Delete
+
 ***
 
 ### 프로필
+
 #### 전환 취소
+
 - (우측 하얀 LED 점등) Fn + x
+
 #### 전환
+
 - Fn + c (우측 하얀 LED 점등) -> 등록한 프로필 번호(숫자키 1 ~ 4)
 
-
 ## 출처 같이 보기
-- <a href="https://happyhackingkb.com/manual/studio/ug-us/en/ug/topic/index.html">해피해킹 매뉴얼</a>
+
+- [해피해킹 매뉴얼](https://happyhackingkb.com/manual/studio/ug-us/en/ug/topic/index.html)
