@@ -37,7 +37,7 @@ tags:
 
 아래 예시는 `[38, 27, 43, 3, 9, 82, 10]`를 병합 정렬하는 과정을 단순화 한 것이다.
 
-![wiki-divide-and-conquer-merge-sort](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm#/media/File:Merge_sort_algorithm_diagram.svg)
+![wiki-divide-and-conquer-merge-sort](/assets/images/algorithms/Merge_sort_algorithm_diagram.png)
 
 ## 구현
 
