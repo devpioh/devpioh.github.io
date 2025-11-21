@@ -37,7 +37,12 @@ adb shell ps | select-string [apk package name]
 ### pid로 로그캣 확인
 
 ```ps
-adb logcat --pid=[pid]
+adb logcat -c               // 이전 로그지우기
+adb logcat --pid=[pid]      // 해당 pid로 로그캣 출력
+
+// 만약 상세 로그 필요시 디바이스에 찍히는 모든 로그를 기록할 필요.
+
+adb logcat > logcat-logging.txt // txt 파일로 남기기, ctrl + c를 이용해 로깅 종료.
 ```
 
 ## 출처 및 같이 보기
