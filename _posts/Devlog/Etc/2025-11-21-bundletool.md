@@ -34,7 +34,7 @@ java -jar [bundle tool path] version  // 버전 툴 버전 확인
 - java 가 설치 되지 않은 경우 **[jdk](https://www.oracle.com/kr/java/technologies/downloads/)** 설치
 - bundletool 이 없는 경우 **[bundletool](https://github.com/google/bundletool/releases)** 다운로드
 
-### Bundle Tool 간편하게 쓰기 위해 프로필 등록
+### Bundle Tool을 간편하게 쓰기 위해 프로필 등록
 
 ```ps
 Add-Content $PROFILE @'
@@ -80,6 +80,14 @@ java -jar [번들 툴 path] build-apks
 ```ps
 java -jar [번들 툴 path] build-apks --apks=[빌드된 apks 파일 경로] 
 ```
+
+### Bundle Tool을 이용해 빌드된 apks를 각각의 apk로 분리
+
+```ps
+java -jar [번들 툴 path] extract-apks --apks=[빌드된 apks 파일 경로] --output-dir=[추출한 apk 경로] --device-spec=[타게팅 디바이스 스팩]
+```
+
+합처진 apks를 각각의 apk로 분리 하여 확인이 필요할때 사용.
 
 ## 출처 및 같이 보기
 
