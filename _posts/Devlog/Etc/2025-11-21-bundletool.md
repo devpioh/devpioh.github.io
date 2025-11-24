@@ -75,16 +75,19 @@ java -jar [번들 툴 path] build-apks
 - **--local-testing** 옵션을 이용해서 PAD(Play Assets Delivery) 테스팅이 가능.
 - **--connected-deivce** 옵션을 이용해 컴퓨터에 연결된 디바이스에 맞는 apks로 빌드. 만약 따로 get-device-spec을 이용해 디바이스 spec json을 뽑아 놨다면 **--devic-spec** 옵션을 이용해 해당 스펙으로 빌드 가능.
 
-### Bundle Tool을 이용해 apks 설치
+### Bundle Tool을 이용하여 apks 설치
 
 ```ps
 java -jar [번들 툴 path] build-apks --apks=[빌드된 apks 파일 경로] 
 ```
 
-### Bundle Tool을 이용해 빌드된 apks를 각각의 apk로 분리
+### Bundle Tool을 이용하여 빌드된 apks를 각각의 apk로 분리
 
 ```ps
-java -jar [번들 툴 path] extract-apks --apks=[빌드된 apks 파일 경로] --output-dir=[추출한 apk 경로] --device-spec=[타게팅 디바이스 스팩]
+java -jar [번들 툴 path] extract-apks
+--apks=[빌드된 apks 파일 경로] 
+--output-dir=[추출한 apk 경로] 
+--device-spec=[타게팅 디바이스 스팩]
 ```
 
 합처진 apks를 각각의 apk로 분리 하여 확인이 필요할때 사용.
