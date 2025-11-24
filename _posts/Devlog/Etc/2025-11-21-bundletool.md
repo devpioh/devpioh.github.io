@@ -62,7 +62,7 @@ java -jar [bundle tool path] get-device-spec --output=[디바이스 spec json �
 ### Bundle Tool을 이용하여 apks 빌드
 
 ```ps
-java -jar [번들 툴 path] build-apks  
+java -jar [bundle tool path] build-apks  
 --bundle=[대상 aab 파일 경로] 
 --output=[빌드된 apks 파일 경로] 
 --local-testing                     // Play Asset Delivery 로컬 테스트 옵션 or 옵션 대신 
@@ -78,13 +78,13 @@ java -jar [번들 툴 path] build-apks
 ### Bundle Tool을 이용하여 apks 설치
 
 ```ps
-java -jar [번들 툴 path] build-apks --apks=[빌드된 apks 파일 경로] 
+java -jar [bundle tool path] build-apks --apks=[빌드된 apks 파일 경로] 
 ```
 
 ### Bundle Tool을 이용하여 빌드된 apks를 각각의 apk로 분리
 
 ```ps
-java -jar [번들 툴 path] extract-apks
+java -jar [bundle tool path] extract-apks
 --apks=[빌드된 apks 파일 경로] 
 --output-dir=[추출한 apk 경로] 
 --device-spec=[타게팅 디바이스 스팩]
