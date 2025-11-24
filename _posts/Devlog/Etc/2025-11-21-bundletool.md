@@ -9,21 +9,21 @@ toc_sticky: true
 categories:
     - etc
 tags:
-    - [bundletool]
+    - [Bundle Tool, BundleTool]
 ---
 
 ## 개요
 
 맨날 잊어먹어서 자주쓰는 명령어 기록.
 
-android bundle tool 을 이용하여 Play Asset delivery 테스트.
+android Bundle Tool 을 이용하여 Play Asset delivery 테스트.
 
 ### 현재 상황
 
 1. 아직 Adressable을 도입을 하지 않은 상황.
 2. Unity 기본 제공 옵션(Build App Bundle, Split Application Binary)를 이용하여 빌드
 
-### 자바 설치 및 bundletool 버전 확인
+### 자바 설치 및 Bundle Tool 버전 확인
 
 ```ps
 java --version  // 자바 설치 및 버전 확인
@@ -32,7 +32,7 @@ java -jar [bundle tool path] version  // 버전 툴 버전 확인
 ```
 
 - java 가 설치 되지 않은 경우 **[jdk](https://www.oracle.com/kr/java/technologies/downloads/)** 설치
-- bundletool 이 없는 경우 **[bundletool](https://github.com/google/bundletool/releases)** 다운로드
+- Bundle Tool 이 없는 경우 **[Bundle Tool](https://github.com/google/bundletool/releases)** 다운로드
 
 ### Bundle Tool을 간편하게 쓰기 위해 프로필 등록
 
@@ -49,7 +49,7 @@ Add-Content $PROFILE @'
 >>> `@
 ```
 
-파워쉘 프로필에 위의 함수를 등록하여 bundletool로 **java -jar "[bundle tool path]"**을 **bundletool**로 접근하도록 처리.
+파워쉘 프로필에 위의 함수를 등록하여 **java -jar "[bundle tool path]"**을 **bundletool**로 접근하도록 처리.
 
 ### Bundle Tool을 이용하여 device spec 출력
 
@@ -72,8 +72,8 @@ java -jar [번들 툴 path] build-apks
 --key-pass=pass:[keystore password] // 키스토어 패스워드
 ```
 
-- **--local-testing** 옵션을 이용해서 PAD(Play Assets Delivery) 테스팅이 가능.
-- **--connected-deivce** 옵션을 이용해 컴퓨터에 연결된 디바이스에 맞는 apks로 빌드. 만약 따로 get-device-spec을 이용해 디바이스 spec json을 뽑아 놨다면 **--devic-spec** 옵션을 이용해 해당 스펙으로 빌드 가능.
+- **local-testing** 옵션을 이용해서 PAD(Play Assets Delivery) 테스팅이 가능.
+- **connected-deivce** 옵션을 이용해 컴퓨터에 연결된 디바이스에 맞는 apks로 빌드. 만약 따로 get-device-spec을 이용해 디바이스 spec json을 뽑아 놨다면 **devic-spec** 옵션을 이용해 해당 스펙으로 빌드 가능.
 
 ### Bundle Tool을 이용하여 apks 설치
 
