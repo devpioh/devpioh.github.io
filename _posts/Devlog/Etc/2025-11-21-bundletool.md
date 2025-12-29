@@ -78,7 +78,7 @@ java -jar [bundle tool path] build-apks
 ### Bundle Tool을 이용하여 apks 설치
 
 ```ps
-java -jar [bundle tool path] build-apks --apks=[빌드된 apks 파일 경로] 
+java -jar [bundle tool path] install-apks --apks=[빌드된 apks 파일 경로] 
 ```
 
 ### Bundle Tool을 이용하여 빌드된 apks를 각각의 apk로 분리
