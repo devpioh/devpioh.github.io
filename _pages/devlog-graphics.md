@@ -1,7 +1,7 @@
 ---
 title: "Graphics"
 layout: archive
-permalink: devlog/graphics
+permalink: /devlog/graphics/
 author_profile: true
 sidebar_nav: true
 ---

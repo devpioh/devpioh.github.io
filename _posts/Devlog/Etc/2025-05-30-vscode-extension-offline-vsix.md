@@ -1,7 +1,7 @@
 ---
 title: "Visual Stuio code 확장 다운로드"
-date: 2025-5-30
-last_modified_at: 2024-11-21
+date: 2025-05-30
+last_modified_at: 2025-05-30
 
 toc: true
 toc_sticky: true

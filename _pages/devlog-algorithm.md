@@ -1,7 +1,7 @@
 ---
 title: "Algorithm"
 layout: archive
-permalink: devlog/algorithm
+permalink: /devlog/algorithm/
 author_profile: true
 sidebar_nav: true
 ---

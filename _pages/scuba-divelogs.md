@@ -1,7 +1,6 @@
 ---
 title: "Dive logs"
 layout: posts
-permalink: scuba/divelog
+permalink: /scuba/divelog/
 author_profile: true
 ---
-

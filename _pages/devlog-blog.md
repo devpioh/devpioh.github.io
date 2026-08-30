@@ -1,7 +1,7 @@
 ---
 title: "Blog"
 layout: archive
-permalink: devlog/blog
+permalink: /devlog/blog/
 author_profile: true
 sidebar_nav: true
 ---

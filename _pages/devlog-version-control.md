@@ -1,7 +1,7 @@
 ---
 title: "Version Control"
 layout: archive
-permalink: devlog/version-control
+permalink: /devlog/version-control/
 author_profile: true
 sidebar_nav: true
 ---

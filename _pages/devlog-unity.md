@@ -1,7 +1,7 @@
 ---
 title: "Unity"
 layout: archive
-permalink: devlog/unity
+permalink: /devlog/unity/
 author_profile: true
 sidebar_nav: true
 ---

@@ -33,4 +33,4 @@ git log -- <파일 경로>
 
 ## 출처 및 같이 보기
 
-- [git document]("https://git-scm.com/book/ko/v2/")
+- [git document](https://git-scm.com/book/ko/v2/)
