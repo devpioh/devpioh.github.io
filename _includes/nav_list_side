@@ -1,6 +1,6 @@
 
 <nav class="nav__list">
-    <ul calss="nav__items" id="category_tag_menu">
+    <ul class="nav__items" id="category_tag_menu">
         <li>
             <span class="nav__sub-title">Dev Log</span>
             <!-- {% for category in site.categories %}
@@ -20,49 +20,49 @@
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "csharp" %}
-                        <li><a href="/devlog/csharp">C# ({{category[1].size}})</a></li>
+                        <li><a href="{{ '/devlog/csharp/' | relative_url }}">C# ({{ category[1].size }})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "unity" %}
-                        <li><a href="/devlog/unity">Unity ({{category[1].size}})</a></li>
+                        <li><a href="{{ '/devlog/unity/' | relative_url }}">Unity ({{ category[1].size }})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "graphics" %}
-                        <li><a href="/devlog/graphics">Graphics ({{category[1].size}})</a></li>
+                        <li><a href="{{ '/devlog/graphics/' | relative_url }}">Graphics ({{ category[1].size }})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "algorithm" %}
-                        <li><a href="/devlog/algorithm">Algorithms ({{category[1].size}})</a></li>
+                        <li><a href="{{ '/devlog/algorithm/' | relative_url }}">Algorithms ({{ category[1].size }})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "version control" %}
-                        <li><a href="/devlog/version-control">Version Control ({{category[1].size}})</a></li>
+                        <li><a href="{{ '/devlog/version-control/' | relative_url }}">Version Control ({{ category[1].size }})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "blog" %}
-                        <li><a href="/devlog/blog">Blog ({{category[1].size}})</a></li>
+                        <li><a href="{{ '/devlog/blog/' | relative_url }}">Blog ({{ category[1].size }})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>
             <ul>
                 {% for category in site.categories %}
                     {% if category[0] == "etc" %}
-                        <li><a href="/devlog/etc">ETC ({{category[1].size}})</a></li>
+                        <li><a href="{{ '/devlog/etc/' | relative_url }}">ETC ({{ category[1].size }})</a></li>
                     {% endif %}
                 {% endfor %}
             </ul>

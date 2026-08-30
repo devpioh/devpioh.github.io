@@ -4,10 +4,28 @@
 
 @charset "utf-8";
 
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&display=swap");
+
+$sans-serif: -apple-system, BlinkMacSystemFont, "Nanum Gothic Coding", "Roboto",
+  "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
-@import url(//fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
-.nanumgothiccoding * {
- font-family: 'Nanum Gothic Coding', monospace;
+a {
+  text-decoration: none;
+}
+
+html {
+  @include breakpoint($medium) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($large) {
+    font-size: 20px;
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 20px;
+  }
 }
