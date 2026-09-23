@@ -47,6 +47,13 @@
             </ul>
             <ul>
                 {% for category in site.categories %}
+                    {% if category[0] == "ai" %}
+                        <li><a href="{{ '/devlog/ai/' | relative_url }}">AI ({{ category[1].size }})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
                     {% if category[0] == "version control" %}
                         <li><a href="{{ '/devlog/version-control/' | relative_url }}">Version Control ({{ category[1].size }})</a></li>
                     {% endif %}
